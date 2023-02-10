@@ -1,0 +1,18 @@
+<input type="text" [(ngModel)]="chercherParEntreprise" name="chercherParEntreprise" placeholder="Chercher par entreprise">
+<div class="row">
+  <div class="col-md-4" *ngFor="let emploi of listeEmploi,let i=index">
+    <div *ngIf="chercherParEntreprise==emploi.entreprise">
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{emploi.entreprise}}</h5>
+          <p class="card-text">Price :{{emploi.titre}}</p>
+          <p class="card-text">Quantity :{{emploi.reference}}</p>
+          <p class="card-text">Like: {{emploi.etat}}</p>
+          <button href="#" class="btn btn-primary" (click)="postuler(emploi)" [disabled]="emploi.etat==false">postuler</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button href="#" class="btn btn-primary" (click)="bilan" >Bilan</button>
+</div>

@@ -1,0 +1,11 @@
+<h1>{{titre}}</h1>
+<input type="number" [(ngModel)]="nombreArticle">
+<ul>
+  <li *ngFor="let article of listeArticles">
+    <div *ngIf="article.category!='Travail'">
+      <p [ngStyle]="{color: article.category === 'Education' ? 'blue' : 'black'}">
+        {{article.titre}} - {{article.category}} - {{article.auteur}} - {{article.contenu}} - {{article.date}}
+      </p>
+    </div>
+  </li>
+</ul>
