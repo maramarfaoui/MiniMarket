@@ -14,9 +14,9 @@ priceMax!:number;
 
   ngOnInit(): void {
   this.listProduct =[
-    {id: "1", title: "T-shirt 1", price: 18, quantity: 0, like: 0},
-    {id: "2", title: "T-shirt 2", price: 21, quantity: 10, like: 0},
-    {id: "3", title: "T-shirt 3", price: 16, quantity: 8, like: 0},
+    {id: "1", title: "Ahmed 1", price: 18, quantity: 0, like: 0,image:"assets/ahmed.jpg"},
+    {id: "2", title: "Yessin ", price: 21, quantity: 10, like: 0,image:"assets/yss.jpg"},
+    {id: "3", title: "Ahmed 2", price: 16, quantity: 8, like: 0,image:"assets/ahm2.jpg"},
   ]
   }
   buy(i:number){

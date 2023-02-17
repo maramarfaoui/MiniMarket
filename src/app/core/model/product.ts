@@ -4,4 +4,5 @@ export class Product{
   price !:number;
   quantity!:number;
   like!:number;
+  image !:string;
 }

@@ -6,18 +6,28 @@ import { ProductsComponent } from './products/products.component';
 import {FormsModule} from "@angular/forms";
 import { OffresEmploiComponent } from './offres-emploi/offres-emploi.component';
 import { ArticlesComponentComponent } from './articles-component/articles-component.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { AppRoutingModule } from './app-routing.module';
+import {RouterModule} from "@angular/router";
+import { NotFoundComponent } from './not-found/not-found.component';
+import { DetailProduitComponent } from './detail-produit/detail-produit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     OffresEmploiComponent,
-    ArticlesComponentComponent
+    ArticlesComponentComponent,
+    NavBarComponent,
+    NotFoundComponent,
+    DetailProduitComponent
   ],
-    imports: [
-        BrowserModule,
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    RouterModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
