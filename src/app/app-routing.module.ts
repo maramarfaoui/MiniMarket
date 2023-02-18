@@ -7,12 +7,14 @@ import {OffresEmploiComponent} from "./offres-emploi/offres-emploi.component";
 import {NotFoundError} from "rxjs";
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {DetailProduitComponent} from "./detail-produit/detail-produit.component";
+import {AddProductComponent} from "./add-product/add-product.component";
 
 
 const routes:Routes =[
 
   {path :'' ,redirectTo:'products', pathMatch:'full'},
 {path :'products' ,component :ProductsComponent},
+  {path :'add-Produit' ,component :AddProductComponent},
   {path :'article' ,component :ArticlesComponentComponent},
   {path :'offres' ,component :OffresEmploiComponent},
   {path :'detail/:id' ,component :DetailProduitComponent},

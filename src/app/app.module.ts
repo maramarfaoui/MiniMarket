@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from "@angular/router";
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailProduitComponent } from './detail-produit/detail-produit.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DetailProduitComponent } from './detail-produit/detail-produit.componen
     ArticlesComponentComponent,
     NavBarComponent,
     NotFoundComponent,
-    DetailProduitComponent
+    DetailProduitComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
