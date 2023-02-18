@@ -1,0 +1,53 @@
+<form #f="ngForm">
+  <div class="form-group">
+    <label >Id</label>
+    <input type="number"  class="form-control" name="id"[(ngModel)]="Product.id" placeholder="enter id " required #id="ngModel">
+   <div *ngIf ="id.invalid && id.touched">
+    <div class="alert alert-danger">id required</div>
+   </div>
+  </div>
+  <div class="form-group">
+    <label >Title</label>
+    <input type="string"  class="form-control" name="title"[(ngModel)]="Product.title" placeholder="enter title " required  minlength="3" #title="ngModel" pattern="[A-Za-z]" >
+    <div *ngIf ="title.invalid && title.touched ">
+      <div class="alert alert-danger" *ngIf="title.errors?.['required']">Title required</div>
+      <div class="alert alert-danger" *ngIf="title.errors?.['minlength']">Title min lenghth is 3</div>
+      <div class="alert alert-danger" *ngIf="title.errors?.['pattern']">title must be </div>
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label >Price</label>
+    <input type="number"  class="form-control" name="price"[(ngModel)]="Product.price" placeholder="enter price " #price="ngModel" min="0">
+    <div *ngIf ="price.invalid && price.touched">
+      <div class="alert alert-danger">Price must be positive</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Quantity</label>
+    <input type="number"  class="form-control" name="quantity"[(ngModel)]="Product.quantity" placeholder="enter quantity "min="99" max="999" #quantity="ngModel">
+    <div *ngIf ="quantity.invalid && quantity.touched">
+      <div class="alert alert-danger" *ngIf="quantity.errors?.['min']">Le minimun est 99</div>
+      <div class="alert alert-danger" *ngIf="quantity.errors?.['max']">Le maximum est 999</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label >Image</label>
+    <input type="string"  class="form-control" name="image" [(ngModel)]="Product.image" placeholder="enter l'image ">
+  </div>
+
+
+  <button type="submit" class="btn btn-primary" [disabled]=" f.invalid">Add Product</button>
+</form>
+{{Product.id}}
+
+{{Product.title}}
+
+{{Product.price}}
+
+{{Product.quantity}}
+
+{{Product.image}}
