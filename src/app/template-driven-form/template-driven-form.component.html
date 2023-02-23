@@ -1,0 +1,29 @@
+<form #f="ngForm">
+  <h2>Information Générales</h2>
+  <div class="mb-3">
+    <label  class="form-label">Nom</label>
+    <input type="string" class="form-control" required >
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Email</label>
+    <input type="string" class="form-control" required  pattern="[a-zA-Z0-9._]+@[a-zA-Z0-9]+.[a-zA-Z]{3}" >
+  </div>
+  <h2>Information de payement</h2>
+  <div class="mb-3">
+    <label  class="form-label">Type de carte</label>
+    <input type="string" class="form-control" required [(ngModel)]="typeDeCarte" #type="ngModel" >
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Numéro carte</label>
+    <input type="number" class="form-control" required minlength="16" [(ngModel)]="numCarte" #num="ngModel">
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Date expiration</label>
+    <input type="string" class="form-control"  required [(ngModel)]="dateExpiration" #dateExp="ngModel">
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">code</label>
+    <input type="string" class="form-control"  [disabled]="dateExp.invalid && num.invalid && type.invalid">
+  </div>
+  <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Ajouter</button>
+</form>
