@@ -12,6 +12,7 @@ import {RouterModule} from "@angular/router";
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailProduitComponent } from './detail-produit/detail-produit.component';
 import { AddProductComponent } from './add-product/add-product.component';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AddProductComponent } from './add-product/add-product.component';
     NavBarComponent,
     NotFoundComponent,
     DetailProduitComponent,
-    AddProductComponent
+    AddProductComponent,
+    TemplateDrivenFormComponent
   ],
   imports: [
     BrowserModule,
