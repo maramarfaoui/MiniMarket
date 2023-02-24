@@ -8,11 +8,11 @@
   </div>
   <div class="form-group">
     <label >Title</label>
-    <input type="string"  class="form-control" name="title"[(ngModel)]="Product.title" placeholder="enter title " required  minlength="3" #title="ngModel" pattern="[A-Za-z]" >
+    <input type="string"  class="form-control" name="title"[(ngModel)]="Product.title" placeholder="enter title " required  minlength="3" #title="ngModel" >
     <div *ngIf ="title.invalid && title.touched ">
       <div class="alert alert-danger" *ngIf="title.errors?.['required']">Title required</div>
       <div class="alert alert-danger" *ngIf="title.errors?.['minlength']">Title min lenghth is 3</div>
-      <div class="alert alert-danger" *ngIf="title.errors?.['pattern']">title must be </div>
+      /* class="alert alert-danger" *ngIf="title.errors?.['pattern']">title must be
 
     </div>
   </div>
@@ -40,7 +40,7 @@
   </div>
 
 
-  <button type="submit" class="btn btn-primary" [disabled]=" f.invalid">Add Product</button>
+  <button type="submit" class="btn btn-primary" [disabled]=" f.invalid" (click)="addP(Product)">Add Product</button>
 </form>
 {{Product.id}}
 
