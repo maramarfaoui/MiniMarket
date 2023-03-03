@@ -2,31 +2,13 @@
 <h1 class ="title">{{title}}</h1>
 <input type="number" name="price" [(ngModel)]="priceMax">
 <div class="row">
-  <div class="col-md-4"*ngFor="let p of listProduct let i=index let j=index ">
-    <div *ngIf="p.price<priceMax ||priceMax==null" >
-    <div class="card" style="width: 18rem;">
-
-      <img src="{{p.image}}" class="card-img-top" alt="...">
-
-      <div class="card-body">
-
-        <h5 class="card-title">Boy {{p.id}}</h5>
-        <p class="card-text">Title :{{p.title}}</p>
-        <p class="card-text">Price :{{p.price}}</p>
-        <p class="card-text">Quatity: :{{p.quantity}}</p>
-        <p class="card-text">Like :{{p.like}}</p>
-
-        <button  class="btn btn-primary" [disabled]="p.quantity<=0"  (click)="buy(i)">Buy</button>
-
-      <button  class="btn btn-primary" [disabled]="p.like>=1" (click)="like(j)">Like</button>
-
-        <button  class="btn btn-primary" [routerLink]="['/detail',p.id]" >Detail</button>
-
-  </div>
+  <div class="col-md-4"*ngFor="let prod of listProduct let i=index let j=index ">
+    <div *ngIf="prod.price<priceMax ||priceMax==null" >
+   <app-product-item [p]="prod" (incrementEvent)="like($event)" (decrementEvent)="buy($event)"></app-product-item>
 </div>
 
   </div>
 </div>
 
-</div>
+
 the value is {{eng}}

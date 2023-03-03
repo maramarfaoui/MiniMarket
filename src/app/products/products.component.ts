@@ -26,12 +26,14 @@ calcul(){
   ngOnInit(): void {
   this.calcul();
   }
-  buy(i:number){
+  buy(p:Product){
+  let i =this.listProduct.indexOf(p)
    this.listProduct[i].quantity--;
    this.calcul();
   }
-  like(j:number){
-    this.listProduct[j].like++
+  like(p:Product){
+  let i = this.listProduct.indexOf(p)
+    this.listProduct[i].like +=1;
   }
 
 }
